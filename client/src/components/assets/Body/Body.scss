@@ -1,0 +1,7 @@
+ .wrapper {
+   //display: flex;
+   //flex-direction: row;
+   background-color: #263238;
+   display: grid;
+   grid-template-columns: 3fr 1fr;
+ }

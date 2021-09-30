@@ -1,0 +1,31 @@
+.filter {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: space-evenly;
+
+  .input-field {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 5px ;
+
+    input, select {
+      box-sizing: border-box;
+      border: 1px solid #000;
+      border-radius: 15px;
+      margin: 0;
+      height: 40px;
+      width: 150px;
+    }
+    input {
+      padding-left: 10px;
+    }
+    .btn{
+      margin-bottom: 3px;
+    }
+ }
+
+}
+

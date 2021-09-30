@@ -1,0 +1,40 @@
+.navBar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  background-color: #263238;
+
+  .tabs {
+    background-color: inherit;
+
+    .indicator {
+      background-color: #4caf50;
+    }
+    .tab a{
+      color: #fff;
+      text-decoration: none;
+    }
+
+  }
+  .login {
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      margin: 0 1rem;
+      border-radius: 25px;
+      background-color: #4caf50;
+    }
+    span {
+      color: #4caf50;
+      cursor: pointer;
+      &:hover {
+        color: #37803a;
+        transition: color 0.5s;
+
+      }
+    }
+  }
+}

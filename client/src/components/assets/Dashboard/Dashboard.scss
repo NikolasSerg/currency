@@ -1,0 +1,24 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 2;
+}
+main {
+  flex-grow: 2;
+  font-size: 12px;
+  background-color: #ffffff;
+  border-radius: 25px;
+  margin: 1rem;
+  padding: 10px;
+  //display: flex;
+  table {
+    th {
+      border-bottom: 1px solid  #263238;
+    }
+    th, td {
+      text-align: center;
+      color: #263238;
+    }
+  }
+
+}

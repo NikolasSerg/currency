@@ -1,0 +1,208 @@
+{
+  "table": [
+    "Buy exchange pair",
+    "Buy price",
+    "Sell exchange",
+    "Sell price",
+    "Trade amount",
+    "Abr%[Free%]",
+    "Exp.profit USD",
+    "Exp.fees USD",
+    "Adj."
+  ],
+  "DASHBOARD": "DASHBOARD",
+  "INSTANCE": "INSTANCE",
+  "PAIRS": "PAIRS",
+  "ABOUT": "ABOUT",
+  "HELP": "HELP",
+  "CONTACT": "CONTACT",
+  "currency": {
+    "USD": [
+      {
+        "Buy exchange pair": "HITBTСЛОТА",
+        "Buy price": 0.3363,
+        "Sell exchange": "BINANCEЛОТА",
+        "Sell price": 0.334,
+        "Trade amount": 353.3,
+        "Abr%[Free%]": "1.01%[0.15%]",
+        "Exp.profit": 1,
+        "Exp.fees": 0.2
+      },
+      {
+        "Buy exchange pair": "BITFINEX/ZEC",
+        "Buy price": 65.50671,
+        "Sell exchange": "KRAKEN/ZEC",
+        "Sell price": 69.57002,
+        "Trade amount": 2.1449,
+        "Abr%[Free%]": "0.27%[0.15%]",
+        "Exp.profit": 0.2,
+        "Exp.fees": 0.2
+      },
+      {
+        "Buy exchange pair": "BBWWСЛОТА",
+        "Buy price": 0.4165,
+        "Sell exchange": "BCHTCEЛОТА",
+        "Sell price": 0.306,
+        "Trade amount": 315.3,
+        "Abr%[Free%]": "1.8%[0.45%]",
+        "Exp.profit": 0.8,
+        "Exp.fees": 0.5
+      },
+      {
+        "Buy exchange pair": "BITFINEX/ZEC",
+        "Buy price": 69.10671,
+        "Sell exchange": "KRAKEN/ZEC",
+        "Sell price": 72.57002,
+        "Trade amount": 3.8449,
+        "Abr%[Free%]": "0.37%[0.23%]",
+        "Exp.profit": 0.4,
+        "Exp.fees": 0.3
+      },
+      {
+        "Buy exchange pair": "HITBTСЛОТА",
+        "Buy price": 0.383,
+        "Sell exchange": "BINANCEЛОТА",
+        "Sell price": 0.368,
+        "Trade amount": 375.3,
+        "Abr%[Free%]": "1.01%[0.15%]",
+        "Exp.profit": 1.1,
+        "Exp.fees": 0.25
+      },
+      {
+        "Buy exchange pair": "BIIIONEX/ZEC",
+        "Buy price": 68.10671,
+        "Sell exchange": "KPOPEN/ZEC",
+        "Sell price": 62.51002,
+        "Trade amount": 2.2644,
+        "Abr%[Free%]": "0.31%[0.18%]",
+        "Exp.profit": 0.3,
+        "Exp.fees": 0.4
+      }
+    ],
+    "EUR": [
+      {
+        "Buy exchange pair": "HITBTСЛОТА",
+        "Buy price": 0.4233,
+        "Sell exchange": "BINANCEЛОТА",
+        "Sell price": 0.374,
+        "Trade amount": 385.3,
+        "Abr%[Free%]": "1.21%[0.18%]",
+        "Exp.profit": 1.2,
+        "Exp.fees": 0.3
+      },
+      {
+        "Buy exchange pair": "BITFINEX/ZEC",
+        "Buy price": 75.56071,
+        "Sell exchange": "KRAKEN/ZEC",
+        "Sell price": 79.77002,
+        "Trade amount": 2.2556,
+        "Abr%[Free%]": "0.37%[0.25%]",
+        "Exp.profit": 0.5,
+        "Exp.fees": 0.4
+      },
+      {
+        "Buy exchange pair": "BBWWСЛОТА",
+        "Buy price": 0.4233,
+        "Sell exchange": "BCHTCEЛОТА",
+        "Sell price": 0.374,
+        "Trade amount": 385.3,
+        "Abr%[Free%]": "1.21%[0.18%]",
+        "Exp.profit": 1.2,
+        "Exp.fees": 0.3
+      },
+      {
+        "Buy exchange pair": "BITFINEX/ZEC",
+        "Buy price": 65.65071,
+        "Sell exchange": "KRAKEN/ZEC",
+        "Sell price": 69.79002,
+        "Trade amount": 1.9556,
+        "Abr%[Free%]": "0.27%[0.15%]",
+        "Exp.profit": 0.3,
+        "Exp.fees": 0.4
+      },
+      {
+        "Buy exchange pair": "HITBTСЛОТА",
+        "Buy price": 0.5133,
+        "Sell exchange": "BINANCEЛОТА",
+        "Sell price": 0.474,
+        "Trade amount": 355.3,
+        "Abr%[Free%]": "1.33%[0.22%]",
+        "Exp.profit": 1.1,
+        "Exp.fees": 0.5
+      },
+      {
+        "Buy exchange pair": "BIIIONEX/ZEC",
+        "Buy price": 95.16071,
+        "Sell exchange": "KPOPEN/ZEC",
+        "Sell price": 9.77002,
+        "Trade amount": 2.5156,
+        "Abr%[Free%]": "0.40%[0.2%]",
+        "Exp.profit": 0.6,
+        "Exp.fees": 0.3
+      }
+    ],
+    "UAH": [
+      {
+        "Buy exchange pair": "HITBTСЛОТА",
+        "Buy price": 0.4233,
+        "Sell exchange": "BINANCEЛОТА",
+        "Sell price": 0.374,
+        "Trade amount": 385.3,
+        "Abr%[Free%]": "1.21%[0.18%]",
+        "Exp.profit": 1.2,
+        "Exp.fees": 0.3
+      },
+      {
+        "Buy exchange pair": "BITFINEX/ZEC",
+        "Buy price": 75.56071,
+        "Sell exchange": "KRAKEN/ZEC",
+        "Sell price": 79.77002,
+        "Trade amount": 2.2556,
+        "Abr%[Free%]": "0.37%[0.25%]",
+        "Exp.profit": 0.5,
+        "Exp.fees": 0.4
+      },
+      {
+        "Buy exchange pair": "BBWWСЛОТА",
+        "Buy price": 0.4233,
+        "Sell exchange": "BCHTCEЛОТА",
+        "Sell price": 0.374,
+        "Trade amount": 385.3,
+        "Abr%[Free%]": "1.21%[0.18%]",
+        "Exp.profit": 1.2,
+        "Exp.fees": 0.3
+      },
+      {
+        "Buy exchange pair": "BITFINEX/ZEC",
+        "Buy price": 65.65071,
+        "Sell exchange": "KRAKEN/ZEC",
+        "Sell price": 69.79002,
+        "Trade amount": 1.9556,
+        "Abr%[Free%]": "0.27%[0.15%]",
+        "Exp.profit": 0.3,
+        "Exp.fees": 0.4
+      },
+      {
+        "Buy exchange pair": "HITBTСЛОТА",
+        "Buy price": 0.5133,
+        "Sell exchange": "BINANCEЛОТА",
+        "Sell price": 0.474,
+        "Trade amount": 355.3,
+        "Abr%[Free%]": "1.33%[0.22%]",
+        "Exp.profit": 1.1,
+        "Exp.fees": 0.5
+      },
+      {
+        "Buy exchange pair": "BIIIONEX/ZEC",
+        "Buy price": 95.16071,
+        "Sell exchange": "KPOPEN/ZEC",
+        "Sell price": 9.77002,
+        "Trade amount": 2.5156,
+        "Abr%[Free%]": "0.40%[0.2%]",
+        "Exp.profit": 0.6,
+        "Exp.fees": 0.3
+      }
+    ]
+  }
+
+}
