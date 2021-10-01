@@ -2,9 +2,7 @@ import React from 'react';
 
 const Instance = () => {
     return (
-        <div>
-            Instance page
-        </div>
+        <h4 style={{color: '#fff', textAlign: 'center'}}>SOME INFORMATION ABOUT INSTANCE</h4>
     );
 };
 

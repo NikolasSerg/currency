@@ -5,7 +5,7 @@ import {useCurrency} from "../../context/currencyContext";
 
 const Aside = () => {
     const selectRef = useRef(null);
-    const {currencySet, currencyName} = useCurrency();
+    const {currency, currencySet, currencyName} = useCurrency();
     useEffect(() => {
         M.FormSelect.init(selectRef.current, {})
     }, [])
@@ -16,7 +16,6 @@ const Aside = () => {
             .then(res => res.json())
             .then(data => {
                 currencySet(data, e.target.value);
-                // currencyNameSet(e.target.value);
             })
             .catch(err => console.error(err));
     }
@@ -42,15 +41,15 @@ const Aside = () => {
                 <div className='infoItem'>
                     <div>
                         <h6>Most profit instance</h6>
-                        {currencyName !== '' ? <span>BTS-{currencyName}</span>  : <span>BTS</span> }
+                        {currencyName !== '' ? <span>BTS-{currencyName}</span>  : <span> - </span> }
                     </div>
                     <div>
                         <h6>Active instance</h6>
-                        <span>BTS</span>
+                        {/*{currency.length !== 0 ? <span>BTS-{currency}</span>  : <span> - </span> }*/}
                     </div>
                     <div>
                         <h6>Total instance</h6>
-                        <span>BTS</span>
+                        {currency.length !== 0 ? <span>{currency.length}</span>  : <span> - </span> }
                     </div>
                 </div>
 

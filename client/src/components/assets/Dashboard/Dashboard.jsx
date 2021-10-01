@@ -34,9 +34,9 @@ const Dashboard = (props) => {
                     </thead>
 
                     <tbody>
-                    {stateCurrency.length === 0 ? <p>CHOOSE the currency</p> :
-                        stateCurrency.map(i => (
-                            <tr>
+                    {stateCurrency.length === 0 ? <tr><td>CHOOSE the currency</td></tr> :
+                        stateCurrency.map((i, n) => (
+                            <tr key={n}>
                                 <td>{i["Buy exchange pair"]}</td>
                                 <td>{i["Buy price"]}</td>
                                 <td>{i["Sell exchange"]}</td>

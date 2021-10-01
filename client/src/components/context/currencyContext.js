@@ -7,22 +7,11 @@ export const CurrencyProvider = ({children}) => {
     const [currency, setCurrency] = useState([]);
     const [currencyName, setCurrencyName] = useState('');
 
-    // const currencySet = (data) => {
-    //     console.log('works currency - ', data)
-    //     setCurrency(data);
-    //
-    // }
     const currencySet = (data, name) => {
         console.log('works currency - ', data)
         setCurrency(data);
         setCurrencyName(name)
     }
-
-    // const currencyNameSet = (data) => {
-    //     console.log('works currency - ', data)
-    //     setCurrencyName(data);
-    //
-    // }
 
     return (
         <CurrencyContext.Provider value={{currency, currencySet, currencyName}}>

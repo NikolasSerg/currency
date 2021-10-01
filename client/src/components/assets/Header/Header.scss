@@ -5,15 +5,21 @@
   justify-content: end;
   background-color: #263238;
 
-  .tabs {
+  .navs {
     background-color: inherit;
+    display: flex;
 
-    .indicator {
-      background-color: #4caf50;
+    .active {
+      border-bottom: 3px solid #4caf50;
     }
-    .tab a{
-      color: #fff;
-      text-decoration: none;
+    .nav {
+      text-align: center;
+      margin: 0 15px;
+      //border-bottom: 4px solid #4caf50;
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
     }
 
   }
