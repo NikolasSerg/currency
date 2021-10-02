@@ -10,18 +10,17 @@ const initState = {
 };
 
 const Filter = (props) => {
-    const buyExchange = useRef('');
-    const buyPrice = useRef('');
-    const sellExchange = useRef('');
-    const tradeAmount = useRef('');
 
-    const {currency, currencyName} = useCurrency();
+    const {currency, currencyName, filterLengthSet} = useCurrency();
     const [buySelect, setBuySelect] = useState('');
+    const [buyPrice, setBuyPrice] = useState('');
     const [sellSelect, setSellSelect] = useState('');
+    const [trade, setTrade] = useState('');
     const [filter, setFilter] = useState([]);
 
     useEffect(() => {
         props.filter(filter);
+        filterLengthSet(filter.length)
     },[filter])
 
 
@@ -36,10 +35,11 @@ const Filter = (props) => {
             })
             newState = db;
         }
-        buyExchange.current.value !== '' ? recurFilter( newState, 'i["Buy exchange pair"] === buyExchange.current.value') : '';
-        buyPrice.current.value !== '' ? recurFilter( newState, 'i["Buy price"] >= buyPrice.current.value') : '';
-        sellExchange.current.value !== '' ? recurFilter( newState, 'i["Sell exchange"] === sellExchange.current.value') : '';
-        tradeAmount.current.value !== '' ? recurFilter( newState, 'i["Trade amount"] >= tradeAmount.current.value') : '';
+
+        buySelect !== '' ? recurFilter( newState, 'i["Buy exchange pair"] === buySelect') : '';
+        buyPrice !== '' ? recurFilter( newState, 'i["Buy price"] >= buyPrice') : '';
+        sellSelect !== '' ? recurFilter( newState, 'i["Sell exchange"] === sellSelect') : '';
+        trade !== '' ? recurFilter( newState, 'i["Trade amount"] >= trade') : '';
 
         setFilter(newState);
 
@@ -54,9 +54,10 @@ const Filter = (props) => {
     const clearFilter = () => {
         props.reset();
         setBuySelect('');
+        setBuyPrice('');
         setSellSelect('');
-        buyPrice.current.value = '';
-        tradeAmount.current.value = '';
+        setTrade('');
+        filterLengthSet(0);
     }
 
     return (
@@ -64,7 +65,7 @@ const Filter = (props) => {
             <form className="col s12">
                     <div className="input-field">
                         <span>Buy exchange pair</span>
-                        <select className="browser-default" name='buy' ref={buyExchange} value={buySelect} onChange={(e) => setBuySelect(e.target.value)}>
+                        <select className="browser-default" value={buySelect} onChange={(e) => setBuySelect(e.target.value)}>
                             <option value="" disabled selected>select exchange pair</option>
                             <option value="HITBTСЛОТА">HITBTСЛОТА</option>
                             <option value="BITFINEX/ZEC">BITFINEX/ZEC</option>
@@ -74,11 +75,11 @@ const Filter = (props) => {
                     </div>
                     <div className="input-field">
                         <span>min Buy price</span>
-                        <input type="text" name='price' placeholder='select min price' ref={buyPrice}/>
+                        <input type="text" placeholder='select min price' value={buyPrice} onChange={(e) => setBuyPrice(e.target.value)}/>
                     </div>
                     <div className="input-field">
                         <span>Sell exchange</span>
-                        <select className="browser-default" ref={sellExchange} name='sell' value={sellSelect} onChange={(e) => setSellSelect(e.target.value)}>
+                        <select className="browser-default" value={sellSelect} onChange={(e) => setSellSelect(e.target.value)}>
                             <option value="" disabled selected>select sell exchange</option>
                             <option value="BINANCEЛОТА">BINANCEЛОТА</option>
                             <option value="KRAKEN/ZEC">KRAKEN/ZEC</option>
@@ -88,7 +89,7 @@ const Filter = (props) => {
                     </div>
                     <div className="input-field">
                         <span>min Trade amount</span>
-                        <input type="text" name='trade'  placeholder='select min trade'  ref={tradeAmount}/>
+                        <input type="text" placeholder='select min trade'  value={trade} onChange={(e) => setTrade(e.target.value)}/>
                     </div>
                     <div className="input-field" type='submit' >
                         <span className='clear' onClick={clearFilter}>Clear filter</span>

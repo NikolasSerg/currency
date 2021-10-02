@@ -6,15 +6,19 @@ const CurrencyContext = React.createContext();
 export const CurrencyProvider = ({children}) => {
     const [currency, setCurrency] = useState([]);
     const [currencyName, setCurrencyName] = useState('');
+    const [currencyFilterLength, setCurrencyFilterLength] = useState(0);
 
     const currencySet = (data, name) => {
-        console.log('works currency - ', data)
         setCurrency(data);
         setCurrencyName(name)
     }
+    const filterLengthSet = (data) => {
+        setCurrencyFilterLength(data);
+    }
+
 
     return (
-        <CurrencyContext.Provider value={{currency, currencySet, currencyName}}>
+        <CurrencyContext.Provider value={{currency, currencySet, currencyName, currencyFilterLength, filterLengthSet}}>
             {children}
         </CurrencyContext.Provider>
     )

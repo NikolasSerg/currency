@@ -7,11 +7,9 @@ import Filter from "../Filter/Filter.jsx";
 const Dashboard = (props) => {
     const {currency, currencyName} = useCurrency();
     const [stateCurrency, setCurrency] = useState([]);
-    // const [stateCurrencyName, setCurrencyName] = useState('');
 
     useEffect(() => {
         setCurrency(currency);
-        // setCurrencyName(currencyName);
     }, [currency]);
 
     const changeState = (data) => {

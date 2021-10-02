@@ -1,11 +1,13 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './Aside.scss';
 import M from "materialize-css";
 import {useCurrency} from "../../context/currencyContext";
 
 const Aside = () => {
     const selectRef = useRef(null);
-    const {currency, currencySet, currencyName} = useCurrency();
+    const {currency, currencySet, currencyName, currencyFilterLength} = useCurrency();
+    const [currName, setCurrName] = useState('');
+
     useEffect(() => {
         M.FormSelect.init(selectRef.current, {})
     }, [])
@@ -45,7 +47,7 @@ const Aside = () => {
                     </div>
                     <div>
                         <h6>Active instance</h6>
-                        {/*{currency.length !== 0 ? <span>BTS-{currency}</span>  : <span> - </span> }*/}
+                        {currency.length !== 0 ? <span>{currencyFilterLength === 0 ? currency.length : currencyFilterLength}</span>  : <span> - </span> }
                     </div>
                     <div>
                         <h6>Total instance</h6>
