@@ -46,8 +46,9 @@ const Dashboard = (props) => {
 
 
 
-                    {stateCurrency.length === 0 ?
-                            lengthSkeleton.map((i, n) => <TableLine /> )
+                    {stateCurrency.length === 0
+                        ?
+                            lengthSkeleton.map((i, n) => <TableLine />)
                         :
                         stateCurrency.map((i, n) => (
                             <tr key={n}>
