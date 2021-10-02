@@ -2,7 +2,9 @@ import React, {useEffect, useState} from 'react';
 import './Dashboard.scss';
 import {useCurrency} from "../../context/currencyContext";
 import Filter from "../Filter/Filter.jsx";
+import TableLine from "../../skeletons/tableLine.jsx";
 
+const lengthSkeleton = [1, 2, 3, 4, 5];
 
 const Dashboard = (props) => {
     const {currency, currencyName} = useCurrency();
@@ -25,7 +27,7 @@ const Dashboard = (props) => {
 
             <main>
                 <Filter filter={changeState} reset={resetState}/>
-                <table className='striped'>
+                <table className='striped' style={{overflow: 'hidden'}}>
                     <thead className='grey-text text-darken-3'>
                     <tr>
                         <th>Buy exchange pair</th>
@@ -41,7 +43,12 @@ const Dashboard = (props) => {
                     </thead>
 
                     <tbody>
-                    {stateCurrency.length === 0 ? <tr><td>CHOOSE the currency</td></tr> :
+
+
+
+                    {stateCurrency.length === 0 ?
+                            lengthSkeleton.map((i, n) => <TableLine /> )
+                        :
                         stateCurrency.map((i, n) => (
                             <tr key={n}>
                                 <td>{i["Buy exchange pair"]}</td>
