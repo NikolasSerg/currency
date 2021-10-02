@@ -1,8 +1,11 @@
 .filter {
-  display: flex;
-  flex-direction: row;
-  align-items: end;
-  justify-content: space-evenly;
+  color: #263238;
+  form {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-evenly;
+  }
 
   .input-field {
     text-align: center;
@@ -25,7 +28,22 @@
     .btn{
       margin-bottom: 3px;
     }
- }
+    .clear {
+      border-bottom: 1px dashed #000;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      padding: 5px;
+      transition: background-color 0.5s, color 0.5s;
+      &:hover {
+        background-color: #3d5059;
+        color: #fff;
+      }
+      &:active {
+        background-color: #c9ccce;
+        color: #000000;
+      }
+    }
 
+ }
 }
 

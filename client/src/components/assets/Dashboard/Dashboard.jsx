@@ -8,16 +8,25 @@ const Dashboard = (props) => {
     const {currency, currencyName} = useCurrency();
     const [stateCurrency, setCurrency] = useState([]);
     // const [stateCurrencyName, setCurrencyName] = useState('');
+
     useEffect(() => {
         setCurrency(currency);
         // setCurrencyName(currencyName);
-    }, [currency])
+    }, [currency]);
+
+    const changeState = (data) => {
+            setCurrency(data)
+    }
+    const resetState = () => {
+        setCurrency(currency)
+    }
+
 
     return (
         <div className='wrapper'>
 
             <main>
-                <Filter />
+                <Filter filter={changeState} reset={resetState}/>
                 <table className='striped'>
                     <thead className='grey-text text-darken-3'>
                     <tr>
