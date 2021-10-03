@@ -7,26 +7,25 @@ import TableLine from "../../skeletons/tableLine.jsx";
 const lengthSkeleton = [1, 2, 3, 4, 5];
 
 const Dashboard = (props) => {
-    const {currency, currencyName} = useCurrency();
+    const {currency, currencyName, currencyFilter} = useCurrency();
     const [stateCurrency, setCurrency] = useState([]);
 
     useEffect(() => {
-        setCurrency(currency);
+        setCurrency(currency)
     }, [currency]);
 
-    const changeState = (data) => {
-        setCurrency(data)
-    }
-    const resetState = () => {
-        setCurrency(currency)
-    }
+    useEffect(() => {
+        currencyFilter !== null
+            ? setCurrency(currencyFilter)
+            : setCurrency(currency)
+    }, [currencyFilter]);
 
 
     return (
         <div className='wrapper'>
 
             <main>
-                <Filter filter={changeState} reset={resetState}/>
+                <Filter />
                 <table className='striped' style={{overflow: 'hidden'}}>
                     <thead className='grey-text text-darken-3'>
                     <tr>
@@ -43,9 +42,7 @@ const Dashboard = (props) => {
                     </thead>
 
                     <tbody>
-
-
-                    {stateCurrency.length !== 0
+                    {stateCurrency.length > 0
                         ?
                         stateCurrency.map((i, n) => (
                                 <tr key={n}>

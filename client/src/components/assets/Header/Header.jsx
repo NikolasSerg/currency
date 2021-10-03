@@ -23,10 +23,8 @@ const Header = () => {
         })
         setMenu(newMenu)
     }, [window.location.pathname])
-    const activeHandle = (e) => {
-        console.log(e.target.name);
-        console.log(e.target.value, ' - value')
-    }
+
+
     if (menu.length === 0) {
         return (<h3>LOADING</h3>)
     } else {
@@ -34,7 +32,7 @@ const Header = () => {
             <div>
                 <div className="navBar">
                     <div className="col s12">
-                        <ul className='navs' onClick={activeHandle}>
+                        <ul className='navs'>
                             {
                                 menuInit.map((item, index) =>
                                     <li className = {`grey-text text-lighten-1 nav ${item.class}`} name={item.name} key={index}>

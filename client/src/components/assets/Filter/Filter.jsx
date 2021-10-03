@@ -4,43 +4,34 @@ import {useCurrency} from "../../context/currencyContext";
 
 const Filter = (props) => {
 
-    const {currency, filterLengthSet} = useCurrency();
+    const {currency, filterSet} = useCurrency();
     const [buySelect, setBuySelect] = useState('');
     const [buyPrice, setBuyPrice] = useState('');
     const [sellSelect, setSellSelect] = useState('');
     const [trade, setTrade] = useState('');
 
-
-
     const filterHandler = (e) => {
-        console.log('click');
-        let filtered = true;
         let newState = [...currency];
-
         function recurFilter(arr, cond) {
             let db = arr.filter(i => {
                 return eval(cond);
             })
             newState = db;
         }
-
         buySelect !== '' ? recurFilter( newState, 'i["Buy exchange pair"] === buySelect') : '';
         buyPrice !== '' ? recurFilter( newState, 'i["Buy price"] >= buyPrice') : '';
         sellSelect !== '' ? recurFilter( newState, 'i["Sell exchange"] === sellSelect') : '';
         trade !== '' ? recurFilter( newState, 'i["Trade amount"] >= trade') : '';
 
-        props.filter(newState);
-        filterLengthSet(newState.length, filtered)
-
+        newState.length === 0 ? filterSet([]) : filterSet(newState);
     }
 
     const clearFilter = () => {
-        props.reset();
         setBuySelect('');
         setBuyPrice('');
         setSellSelect('');
         setTrade('');
-        filterLengthSet(0, false);
+        filterSet(null);
     }
 
     return (

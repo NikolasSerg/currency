@@ -10,24 +10,22 @@
   flex-wrap: nowrap;
   width: 100%;
   overflow: hidden;
+  margin-top: 25px;
 }
 
 
 .skeleton.graf {
-  //width: 100%;
   flex-basis: 10px;
   flex-grow: 1;
   height: 20px;
 }
 
 .skeleton.text {
-  //width: 100%;
   flex-basis: 75px;
   flex-grow: 3;
   height: 20px;
 }
 .skeleton.number {
-  //width: 100%;
   flex-basis: 50px;
   flex-grow: 2;
   height: 20px;
