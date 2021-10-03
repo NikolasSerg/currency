@@ -15,7 +15,7 @@ const Dashboard = (props) => {
     }, [currency]);
 
     const changeState = (data) => {
-            setCurrency(data)
+        setCurrency(data)
     }
     const resetState = () => {
         setCurrency(currency)
@@ -45,28 +45,31 @@ const Dashboard = (props) => {
                     <tbody>
 
 
-
-                    {stateCurrency.length === 0
+                    {stateCurrency.length !== 0
                         ?
-                            lengthSkeleton.map((i, n) => <TableLine />)
-                        :
                         stateCurrency.map((i, n) => (
-                            <tr key={n}>
-                                <td>{i["Buy exchange pair"]}</td>
-                                <td>{i["Buy price"]}</td>
-                                <td>{i["Sell exchange"]}</td>
-                                <td>{i["Sell price"]}</td>
-                                <td>{i["Trade amount"]}</td>
-                                <td>{i["Abr%[Free%]"]}</td>
-                                <td>{i["Exp.profit"]}</td>
-                                <td>{i["Exp.fees"]}</td>
-                                <td><span className="material-icons">show_chart</span></td>
-                            </tr>
-                        )
-                    )}
+                                <tr key={n}>
+                                    <td>{i["Buy exchange pair"]}</td>
+                                    <td>{i["Buy price"]}</td>
+                                    <td>{i["Sell exchange"]}</td>
+                                    <td>{i["Sell price"]}</td>
+                                    <td>{i["Trade amount"]}</td>
+                                    <td>{i["Abr%[Free%]"]}</td>
+                                    <td>{i["Exp.profit"]}</td>
+                                    <td>{i["Exp.fees"]}</td>
+                                    <td><span className="material-icons">show_chart</span></td>
+                                </tr>
+                            )
+                        ) :
+                        null
+                    }
                     </tbody>
                 </table>
-
+                {stateCurrency.length === 0
+                    ?
+                lengthSkeleton.map((i, n) =>
+                    <TableLine key={n}/>
+                ) : null}
             </main>
         </div>
     );

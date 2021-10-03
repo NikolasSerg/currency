@@ -1,32 +1,20 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useState} from 'react';
 import './Filter.scss';
 import {useCurrency} from "../../context/currencyContext";
 
-const initState = {
-    "Buy exchange pair": "",
-    "Buy price": "",
-    "Sell exchange": "",
-    "Trade amount": ""
-};
-
 const Filter = (props) => {
 
-    const {currency, currencyName, filterLengthSet} = useCurrency();
+    const {currency, filterLengthSet} = useCurrency();
     const [buySelect, setBuySelect] = useState('');
     const [buyPrice, setBuyPrice] = useState('');
     const [sellSelect, setSellSelect] = useState('');
     const [trade, setTrade] = useState('');
-    const [filter, setFilter] = useState([]);
-
-    useEffect(() => {
-        props.filter(filter);
-        filterLengthSet(filter.length)
-    },[filter])
 
 
 
     const filterHandler = (e) => {
-        console.log('click')
+        console.log('click');
+        let filtered = true;
         let newState = [...currency];
 
         function recurFilter(arr, cond) {
@@ -41,14 +29,9 @@ const Filter = (props) => {
         sellSelect !== '' ? recurFilter( newState, 'i["Sell exchange"] === sellSelect') : '';
         trade !== '' ? recurFilter( newState, 'i["Trade amount"] >= trade') : '';
 
-        setFilter(newState);
+        props.filter(newState);
+        filterLengthSet(newState.length, filtered)
 
-    }
-
-    const submitHandle = (e) => {
-        e.preventDefault();
-        console.log(filter, ' - filters');
-        props.filter(filter);
     }
 
     const clearFilter = () => {
@@ -57,7 +40,7 @@ const Filter = (props) => {
         setBuyPrice('');
         setSellSelect('');
         setTrade('');
-        filterLengthSet(0);
+        filterLengthSet(0, false);
     }
 
     return (
@@ -65,8 +48,8 @@ const Filter = (props) => {
             <form className="col s12">
                     <div className="input-field">
                         <span>Buy exchange pair</span>
-                        <select className="browser-default" value={buySelect} onChange={(e) => setBuySelect(e.target.value)}>
-                            <option value="" disabled selected>select exchange pair</option>
+                        <select disabled = {currency.length === 0 ? true : false} className="browser-default" value={buySelect} onChange={(e) => setBuySelect(e.target.value)}>
+                            <option value="select">select exchange pair</option>
                             <option value="HITBTСЛОТА">HITBTСЛОТА</option>
                             <option value="BITFINEX/ZEC">BITFINEX/ZEC</option>
                             <option value="BBWWСЛОТА">BBWWСЛОТА</option>
@@ -75,12 +58,12 @@ const Filter = (props) => {
                     </div>
                     <div className="input-field">
                         <span>min Buy price</span>
-                        <input type="text" placeholder='select min price' value={buyPrice} onChange={(e) => setBuyPrice(e.target.value)}/>
+                        <input  disabled = {currency.length === 0 ? true : false}  type="number" placeholder='select min price' value={buyPrice} onChange={(e) => setBuyPrice(e.target.value)}/>
                     </div>
                     <div className="input-field">
                         <span>Sell exchange</span>
-                        <select className="browser-default" value={sellSelect} onChange={(e) => setSellSelect(e.target.value)}>
-                            <option value="" disabled selected>select sell exchange</option>
+                        <select  disabled = {currency.length === 0 ? true : false}  className="browser-default" value={sellSelect} onChange={(e) => setSellSelect(e.target.value)}>
+                            <option value="select">select sell exchange</option>
                             <option value="BINANCEЛОТА">BINANCEЛОТА</option>
                             <option value="KRAKEN/ZEC">KRAKEN/ZEC</option>
                             <option value="BCHTCEЛОТА">BCHTCEЛОТА</option>(
@@ -89,7 +72,7 @@ const Filter = (props) => {
                     </div>
                     <div className="input-field">
                         <span>min Trade amount</span>
-                        <input type="text" placeholder='select min trade'  value={trade} onChange={(e) => setTrade(e.target.value)}/>
+                        <input  disabled = {currency.length === 0 ? true : false} type="number" placeholder='select min trade'  value={trade} onChange={(e) => setTrade(e.target.value)}/>
                     </div>
                     <div className="input-field" type='submit' >
                         <span className='clear' onClick={clearFilter}>Clear filter</span>

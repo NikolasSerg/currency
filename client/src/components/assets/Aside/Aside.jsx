@@ -1,12 +1,11 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef} from 'react';
 import './Aside.scss';
 import M from "materialize-css";
 import {useCurrency} from "../../context/currencyContext";
 
 const Aside = () => {
     const selectRef = useRef(null);
-    const {currency, currencySet, currencyName, currencyFilterLength} = useCurrency();
-    const [currName, setCurrName] = useState('');
+    const {currency, currencySet, currencyName, currencyFilterLength, currencyFiltered} = useCurrency();
 
     useEffect(() => {
         M.FormSelect.init(selectRef.current, {})
@@ -28,8 +27,8 @@ const Aside = () => {
                 <h5>Dashboard profit currency</h5>
                 <div className='currencyItem'>
                     <div id='select' className="input-field" >
-                        <select ref={selectRef} onChange={selectHandler}>
-                            <option value="" disabled selected>currency</option>
+                        <select ref={selectRef} defaultValue='currency'  onChange={selectHandler}>
+                            <option value='currency' disabled>currency</option>
                             <option value="UAH">UAH</option>
                             <option value="USD">USD</option>
                             <option value="EUR">EUR</option>
@@ -47,7 +46,7 @@ const Aside = () => {
                     </div>
                     <div>
                         <h6>Active instance</h6>
-                        {currency.length !== 0 ? <span>{currencyFilterLength === 0 ? currency.length : currencyFilterLength}</span>  : <span> - </span> }
+                        {currency.length !== 0 ? <span>{currencyFilterLength === 0 && currencyFiltered === false  ? currency.length : currencyFilterLength}</span>  : <span> - </span> }
                     </div>
                     <div>
                         <h6>Total instance</h6>

@@ -5,18 +5,18 @@ import './skeleton.scss';
 
 const TableLine = () => {
     return (
-            <tr className='skeleton-wrapper'>
-                <td><SkeletonElem type='text'/></td>
-                <td><SkeletonElem type='number'/></td>
-                <td><SkeletonElem type='text'/></td>
-                <td><SkeletonElem type='number'/></td>
-                <td><SkeletonElem type='number'/></td>
-                <td><SkeletonElem type='text'/></td>
-                <td><SkeletonElem type='number'/></td>
-                <td><SkeletonElem type='number'/></td>
-                <td><SkeletonElem type='number'/></td>
+            <div className='skeleton-wrapper'>
+                <SkeletonElem type='text'/>
+                <SkeletonElem type='number'/>
+                <SkeletonElem type='text'/>
+                <SkeletonElem type='number'/>
+                <SkeletonElem type='number'/>
+                <SkeletonElem type='text'/>
+                <SkeletonElem type='number'/>
+                <SkeletonElem type='number'/>
+                <SkeletonElem type='graf'/>
                 <LoadinEffect />
-            </tr>
+            </div>
     );
 };
 
