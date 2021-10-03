@@ -9,13 +9,10 @@ export const CurrencyProvider = ({children}) => {
     const [currencyFilter, setCurrencyFilter] = useState(null);
 
     const currencySet = (data, name) => {
-        console.log(data, name)
         setCurrency(data);
         setCurrencyName(name)
     }
     const filterSet = (data) => {
-        console.log(data, ' - filter')
-
         setCurrencyFilter(data);
     }
 
